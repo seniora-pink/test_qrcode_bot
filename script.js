@@ -42,19 +42,18 @@ const DemoApp = {
                 console.error("Error:", error);
               });
 
-            Telegram.WebApp.showScanQrPopup({text: 'with any link'}, function (qrCode) {
+//            Telegram.WebApp.showScanQrPopup({text: 'with any link'}, function (qrCode) {
                 // Process the scanned QR code for order
                 // For this example, we assume the QR code contains the order ID
                 Telegram.WebApp.sendMessage({
                   chat_id: chatId,
-                  text: qrCode,
+                  text: "qrCode",
                   token: botToken,
                 });
 
                 Telegram.WebApp.showAlert(qrCode);
-                DemoApp.close();
                 return true;
-            });
+//            });
         }
 }
 
