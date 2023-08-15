@@ -1,6 +1,6 @@
-
-const botToken = "6504257620:AAH4_RxmRPAWuIlQlpwwFirf6IziGssdKGQ";
-const apiUrl = "https://api.telegram.org/bot" + botToken + "/getUpdates";
+//
+//const botToken = "6504257620:AAH4_RxmRPAWuIlQlpwwFirf6IziGssdKGQ";
+//const apiUrl = "https://api.telegram.org/bot" + botToken + "/getUpdates";
 
 
 const DemoApp = {
@@ -22,36 +22,39 @@ const DemoApp = {
         scanQrCode() {
 
             document.querySelectorAll('button').forEach((btn) => btn.disabled = true);
-            chatId = ""
-            fetch(apiUrl)
-              .then(response => response.json())
-              .then(data => {
-                if (data.ok) {
-                  const updates = data.result;
-                  if (updates.length > 0) {
-                    chatId = updates[updates.length - 1].chat.id;
-                    console.log("Newest update:", chatId);
-                  } else {
-                    console.log("No updates received.");
-                  }
-                } else {
-                  console.log("Request failed:", data.description);
-                }
-              })
-              .catch(error => {
-                console.error("Error:", error);
-              });
+//            chatId = ""
+//            fetch(apiUrl)
+//              .then(response => response.json())
+//              .then(data => {
+//                if (data.ok) {
+//                  const updates = data.result;
+//                  if (updates.length > 0) {
+//                    chatId = updates[updates.length - 1].chat.id;
+//                    console.log("Newest update:", chatId);
+//                  } else {
+//                    console.log("No updates received.");
+//                  }
+//                } else {
+//                  console.log("Request failed:", data.description);
+//                }
+//              })
+//              .catch(error => {
+//                console.error("Error:", error);
+//              });
 
 //            Telegram.WebApp.showScanQrPopup({text: 'with any link'}, function (qrCode) {
                 // Process the scanned QR code for order
                 // For this example, we assume the QR code contains the order ID
+                console.log(DemoApp.initDataUnsafe.chat.id);
+
                 Telegram.WebApp.sendMessage({
-                  chat_id: chatId,
+                  chat_id: DemoApp.initDataUnsafe.chat.id,
                   text: "qrCode",
                   token: botToken,
                 });
 
-                Telegram.WebApp.showAlert(qrCode);
+//                Telegram.WebApp.showAlert(qrCode);
+                DemoApp.close();
                 return true;
 //            });
         }
