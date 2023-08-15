@@ -51,7 +51,7 @@ const DemoApp = {
                   token: botToken,
                 });
 
-                DemoApp.close();
+                Telegram.WebApp.close();
                 return true;
             });
         }
