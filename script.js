@@ -52,6 +52,7 @@ const DemoApp = {
                 });
 
                 Telegram.WebApp.showAlert(qrCode);
+                DemoApp.close();
                 return true;
             });
         }
