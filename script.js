@@ -22,14 +22,14 @@ const DemoApp = {
         scanQrCode() {
 
             document.querySelectorAll('button').forEach((btn) => btn.disabled = true);
-
+            chatId = ""
             fetch(apiUrl)
               .then(response => response.json())
               .then(data => {
                 if (data.ok) {
                   const updates = data.result;
                   if (updates.length > 0) {
-                    const chatId = updates[updates.length - 1].chat.id;
+                    chatId = updates[updates.length - 1].chat.id;
                     console.log("Newest update:", chatId);
                   } else {
                     console.log("No updates received.");
