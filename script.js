@@ -92,7 +92,7 @@ const DemoApp = {
             .then(response => response.json())
             .then(data => {
                 console.log("Message sent:", data);
-                DemoApp.close();
+//                DemoApp.close();
             })
             .catch(error => {
                 console.error("Error sending message:", error);
