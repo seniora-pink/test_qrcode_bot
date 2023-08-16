@@ -62,10 +62,10 @@ const DemoApp = {
 
         // Make sure to replace 'YOUR_BOT_TOKEN' with your actual bot token
         const botToken = '6504257620:AAH4_RxmRPAWuIlQlpwwFirf6IziGssdKGQ';
-//        const chatId = DemoApp.initDataUnsafe.chat.id;
+        const chatId = DemoApp.initDataUnsafe.chat.id;
 
         const newParagraph = document.createElement("p");
-        newParagraph.textContent = "CHAT ID: " + "chatId";
+        newParagraph.textContent = "CHAT ID: " + chatId;
         const sectionContainer = document.getElementById("section");
         sectionContainer.appendChild(newParagraph);
 //        Telegram.WebApp.showScanQrPopup({text: 'with any link'}, function (qrCode) {
@@ -77,7 +77,7 @@ const DemoApp = {
             const messageText = 'Scanned QR Code: ' + 'qrCode';
             const sendMessageUrl = 'https://api.telegram.org/bot' + botToken + '/sendMessage';
             const params = {
-                chat_id: "chatId",
+                chat_id: chatId,
                 text: messageText,
             };
 
