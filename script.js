@@ -99,7 +99,7 @@ const DemoApp = {
 //                DemoApp.close();
             });
 
-            return true;
+//            return true;
     }
 }
 
