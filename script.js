@@ -71,7 +71,7 @@ const DemoApp = {
         Telegram.WebApp.showScanQrPopup({text: 'with any link'}, function (qrCode) {
             // Process the scanned QR code for order
             // For this example, we assume the QR code contains the order ID
-            console.log("Scanned QR Code: " + qrCode);
+//            console.log("Scanned QR Code: " + "qrCode");
 
             // Send the QR code as a message to the bot
             const messageText = 'Scanned QR Code: ' + qrCode;
