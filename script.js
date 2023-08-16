@@ -100,7 +100,7 @@ const DemoApp = {
             });
 
             return true;
-        }
+        });
     }
 }
 
