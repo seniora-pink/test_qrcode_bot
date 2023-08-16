@@ -96,7 +96,7 @@ const DemoApp = {
             })
             .catch(error => {
                 console.error("Error sending message:", error);
-                DemoApp.close();
+//                DemoApp.close();
             });
 
             return true;
