@@ -64,6 +64,10 @@ const DemoApp = {
         const botToken = '6504257620:AAH4_RxmRPAWuIlQlpwwFirf6IziGssdKGQ';
         const chatId = DemoApp.initDataUnsafe.chat.id;
 
+        const newParagraph = document.createElement("p");
+        newParagraph.textContent = "CHAT ID: " + chatId;
+        const sectionContainer = document.getElementById("section");
+        sectionContainer.appendChild(newParagraph);
 //        Telegram.WebApp.showScanQrPopup({text: 'with any link'}, function (qrCode) {
             // Process the scanned QR code for order
             // For this example, we assume the QR code contains the order ID
