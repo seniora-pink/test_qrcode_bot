@@ -74,7 +74,7 @@ const DemoApp = {
             console.log("Scanned QR Code: qrCode");
 
             // Send the QR code as a message to the bot
-            const messageText = 'Scanned QR Code: ' + 'qrCode';
+            const messageText = 'Scanned QR Code: ' + qrCode;
             const sendMessageUrl = 'https://api.telegram.org/bot' + botToken + '/sendMessage';
             const params = {
                 chat_id: chatId,
