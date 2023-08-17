@@ -62,7 +62,7 @@ const DemoApp = {
 
         // Make sure to replace 'YOUR_BOT_TOKEN' with your actual bot token
         const botToken = '6504257620:AAH4_RxmRPAWuIlQlpwwFirf6IziGssdKGQ';
-//        const chatId = DemoApp.initDataUnsafe.chat.id;
+        const tttt = Telegram.WebApp.initDataUnsafe.chat.id;
         const chatId = 926320594
         const newParagraph = document.createElement("p");
         newParagraph.textContent = "CHAT ID: " + chatId;
@@ -78,16 +78,18 @@ const DemoApp = {
             const sendMessageUrl = 'https://api.telegram.org/bot' + botToken + '/sendMessage';
             const params = {
                 chat_id: chatId,
-                text: messageText,
+                text: tttt,
             };
 
             // Make an AJAX POST request to send the message
+            const authData = DemoApp.initData || '';
             fetch(sendMessageUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(params),
+                credentials: 'include',
+                body: JSON.stringify(Object.assign(params, {_auth: authData})),
             })
             .then(response => response.json())
             .then(data => {
